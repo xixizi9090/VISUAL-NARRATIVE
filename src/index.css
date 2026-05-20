@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Playfair Display", serif;
+
+  --color-studio-blue: #f9b7c8;
+  --color-studio-orange: #ff8c42;
+  --color-studio-bg: #0d0d0d;
+  --color-studio-header: #f8f8f8;
+  --color-studio-text: #fdfdfd;
+  --color-studio-border: #1a1a1a;
+  --color-studio-green: #3a543b;
+  --color-studio-beige: #f5f0e1;
+}
+
+@layer base {
+  body {
+    @apply bg-studio-bg text-studio-text font-sans antialiased selection:bg-studio-orange selection:text-white;
+  }
+}
+
+@layer utilities {
+  .text-huge {
+    @apply text-[clamp(4rem,20vw,16rem)] leading-[0.8] tracking-[-0.05em] uppercase font-bold;
+  }
+  .brutalist-border {
+    @apply border-2 border-studio-border;
+  }
+  .dot-bg {
+    background-image: radial-gradient(rgba(0,0,0,0.2) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  @keyframes scan {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(1000%); }
+  }
+}
